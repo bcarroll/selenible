@@ -24,7 +24,7 @@ from ..version import VERSION
 
 class Base:
     passcmd = "pass"
-    schema = yaml.load(resource_stream(__name__, '../schema/base.yaml'))
+    schema = yaml.load(resource_stream(__name__, '../schema/base.yaml'), Loader=yaml.SafeLoader)
 
     def __init__(self):
         self.lock = Lock()
